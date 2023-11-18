@@ -1,0 +1,19 @@
+= Recording and Editing Dolomites Talk
+
+== Setup
+
+|===
+|Setup |Speaker audio |Speaker visuals |Media audio |Media visuals
+
+|iPad on a tripod
+|low
+|ok
+|low
+|ok
+
+|Presenter laptop with external microphone
+|good
+|n/a
+|good
+|good
+|===
