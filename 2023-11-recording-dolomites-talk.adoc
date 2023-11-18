@@ -1,6 +1,25 @@
 = Recording and Editing Dolomites Talk
 
+== Venue
+
+Caltech Rock Auditorium
+
+* Capacity: 100
+* Lighting
+** (++) Ability to dim room lights and spotlight speaker
+** Beckman Institute Auditorium seems to be all lights or no lights
+*** All lights makes screen difficult to see.
+*** No lights with bright screen is hard on the eyes and a safety hazard
+* Audio / Visual
+** Visual: HDMI connection
+** Speaker audio: podium microphone (levels were good)
+** Media audio: Audio via HDMI to auditorium speakers (good)
+
+Compared to Beckman Institute Auditorium, I like Rock Auditorium better.
+
 == Setup
+
+=== Overview
 
 |===
 |Setup |Speaker audio |Speaker visuals |Media audio |Media visuals
@@ -17,3 +36,60 @@
 |good
 |good
 |===
+
+=== Presenter Laptop Setup
+
+==== Hardware
+
+* https://www.samsung.com/us/app/computing/galaxy-book-pro-360/[Samsung Galaxy Book Pro 360]
+* https://www.anker.com/products/a8365[Anker 543 USB-C Hub (6-in-1, Slim)]
+* https://www.logitechg.com/en-us/products/streaming-gear/yeti-x-professional-microphone.988-000105.html[Blue Yeti X Microphone]
+
+==== Software
+
+* https://obsproject.com/[OBS Studio]
+
+==== Display
+
+Extend (treat laptop display and projector as two separate monitors)
+
+==== OBS Setup
+
+* Settings
+** Output
+*** Recording
+**** Audio Track: Select 1, 2, and 3
+
+* Sources
+** Audio Input Capture - Blue Yeti X (for speaker)
+** Audio Output Capture - HDMI audio out (for media)
+** Display Capture - HDMI video out (for media)
+* Audio Mixer
+** Uncheck all tracks
+** For Audio Input Capture (speaker audio) - Select tracks 1 and 2
+** For Audio Output Capture (media audio) - Select tracks 1 and 3
+
+NOTE: Above is desired audio mixer track selection.
+Actual audio mixer track selection for Audio Input Capture also included track 3.
+This made it so that there was no track with media audio isolated.
+Isolation is important because the microphone also picks up media audio being played through the room speakers.
+This creates an echo.
+Need audio isolation for mixing in post.
+See section on fixing audio isolation for how this issue was resolved in post.
+
+== Fixing Audio Isolation
+
+As noted above, because OBS audio mixer track selection configuration was bad, audio sources were not properly isolated.
+I didn't have a track with media audio only.
+But, luckily, there was a track with speaker audio only.
+So I could get a media audio only track by taking the media+speaker audio track and subtracting the speaker-only audio track.
+
+This was done by first extracting the audio tracks using MKVToolNix and MKVExtractGUI-2 to extract the ACC audio tracks from the MKV source file.
+I then used Audacity + FFMpeg to import the tracks into Audacity, invert the speaker-only audio track, and export the result to a media-only audio track.
+
+== Editing
+
+I imported the iPad video, media video, speaker audio, and media audio into Filmora.
+
+The media video, speaker audio, and media audio were all easy to align since they all come from the same source:  they all start at the same time.
+Aligning the iPad video with the rest required max timeline zoom and matching frames where the first slide change happens.
