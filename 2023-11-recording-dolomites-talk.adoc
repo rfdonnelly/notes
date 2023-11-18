@@ -93,3 +93,11 @@ I imported the iPad video, media video, speaker audio, and media audio into Film
 
 The media video, speaker audio, and media audio were all easy to align since they all come from the same source:  they all start at the same time.
 Aligning the iPad video with the rest required max timeline zoom and matching frames where the first slide change happens.
+
+I decided to use the speaker-only audio only.
+The speaker-only audio picks up the media audio just enough.
+This choice simplified the editing process so that I didn't need to mix the audio in and out as I talked over the videos.
+
+I cropped the iPad video to show only the speaker (screen cropped out) then overlayed it ontop of the projector video on the bottom left corner.
+This covered part of the slides.
+When it covered text or video, I cut out the presenter video.
